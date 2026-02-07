@@ -40,22 +40,21 @@ forge-setup-project → forge-create-issue → forge-implement-issue → forge-r
 
 ## Install
 
-Forge skills follow the [Agent Skills](https://agentskills.io) open standard. Copy or symlink the skill directories into your agent's skills folder:
+Forge skills follow the [Agent Skills](https://agentskills.io) open standard and work with any compatible agent.
+
+**Via [npx skills](https://skills.sh)** — auto-detects your agents and installs to all of them:
 
 ```bash
-# Symlink all skills (easy updates)
-ln -s /path/to/forge/skills/forge-* <your-agent-skills-dir>/
-
-# Or a single skill
-ln -s /path/to/forge/skills/forge-setup-project <your-agent-skills-dir>/forge-setup-project
+npx skills add mgratzer/forge
 ```
 
-Check your agent's documentation for the skills directory location. Common paths:
+**Manual** — symlink into your agent's skills directory:
 
-| Scope | Path |
-|-------|------|
-| Personal (all projects) | `~/.claude/skills/`, `~/.agents/skills/`, or equivalent |
-| Project-scoped | `.claude/skills/`, `.agents/skills/`, or equivalent |
+```bash
+ln -s /path/to/forge/skills/forge-* <your-agent-skills-dir>/
+```
+
+Check your agent's docs for the skills directory path (e.g. `~/.claude/skills/`, `~/.agents/skills/`).
 
 ## Documentation
 
