@@ -1,6 +1,6 @@
 # Forge
 
-Forge is a collection of Claude Code skills that define a structured, GitHub-centric development workflow.
+Forge is a collection of agent skills that define a structured, GitHub-centric development workflow. Skills follow the [Agent Skills](https://agentskills.io) open standard.
 
 ## Commands
 

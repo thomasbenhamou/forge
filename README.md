@@ -1,5 +1,5 @@
 <p align="center">
-  <strong>A collection of Claude Code skills for structured, GitHub-centric development.</strong><br>
+  <strong>Agent skills for structured, GitHub-centric development.</strong><br>
   One workflow. Six skills. From issue to shipped code.
 </p>
 
@@ -19,6 +19,8 @@ A forge is where raw material meets intention. You bring the codebase — these 
 
 ## Skills
 
+Forge skills follow the [Agent Skills](https://agentskills.io) open standard and work with any compatible agent.
+
 | Skill | Command | Purpose |
 |-------|---------|---------|
 | Setup Project | `/forge-setup-project` | Create CLAUDE.md, docs/, README, and other meta-structure |
@@ -36,15 +38,49 @@ The skills form a pipeline — each step feeds into the next:
 forge-setup-project → forge-create-issue → forge-implement-issue → forge-reflect-pr → forge-address-pr-feedback → forge-update-changelog
 ```
 
-## Quick Start
+## Install
 
-1. Install the skills in your Claude Code project (add this repo as a skill source)
-2. Run `/forge-setup-project` to set up your project's meta-structure
-3. Run `/forge-create-issue` to plan your first piece of work
-4. Run `/forge-implement-issue <number>` to implement it
-5. Run `/forge-reflect-pr` to self-review
-6. Run `/forge-address-pr-feedback` after receiving review comments
-7. Run `/forge-update-changelog` after merging
+Copy or symlink the skill directories into your agent's skills folder.
+
+### Claude Code
+
+```bash
+# All skills (symlink for easy updates)
+ln -s /path/to/forge/skills/forge-* ~/.claude/skills/
+
+# Or a single skill
+ln -s /path/to/forge/skills/forge-setup-project ~/.claude/skills/forge-setup-project
+```
+
+Skills land in `~/.claude/skills/` (personal) or `.claude/skills/` (project-scoped). See [Claude Code docs](https://code.claude.com/docs/en/skills).
+
+### Codex
+
+```bash
+ln -s /path/to/forge/skills/forge-* ~/.agents/skills/
+```
+
+Skills land in `~/.agents/skills/` (personal) or `.agents/skills/` (project-scoped). See [Codex docs](https://developers.openai.com/codex/skills/).
+
+### Amp
+
+```bash
+ln -s /path/to/forge/skills/forge-* ~/.config/agents/skills/
+```
+
+Amp also reads from `.agents/skills/` and `.claude/skills/`. See [Amp docs](https://ampcode.com/news/agent-skills).
+
+### pi
+
+```bash
+ln -s /path/to/forge/skills/forge-* ~/.pi/agent/skills/
+```
+
+Or install as a pi package. See [pi docs](https://github.com/badlogic/pi-mono/tree/main/packages/coding-agent#skills).
+
+### Other agents
+
+Any agent that supports the [Agent Skills](https://agentskills.io) standard can use these skills. Copy the `skills/forge-*` directories into your agent's skills folder.
 
 ## Documentation
 
